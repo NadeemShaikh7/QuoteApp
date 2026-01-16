@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/collection_controller.dart';
-import '../../controllers/favorite_controller.dart';
 import '../../controllers/quote_controller.dart';
 import '../../widgets/daily_quote_card.dart';
 import '../../widgets/quote_card.dart';
@@ -15,8 +14,6 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final QuoteController controller = Get.put(QuoteController());
-  final FavoriteController favoriteController =
-  Get.put(FavoriteController());
   final CollectionController collectionController =
   Get.put(CollectionController());
   final ScrollController scrollController = ScrollController();

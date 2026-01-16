@@ -11,7 +11,7 @@ class CollectionDetailScreen extends StatelessWidget {
   final CollectionController controller =
   Get.put(CollectionController());
   final FavoriteController favoriteController =
-  Get.put(FavoriteController());
+  Get.find<FavoriteController>();
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import '../../widgets/quote_card.dart';
 class FavoritesScreen extends StatelessWidget {
   FavoritesScreen({super.key});
 
-  final controller = Get.put(FavoriteController());
+  final controller = Get.find<FavoriteController>();
 
   @override
   Widget build(BuildContext context) {

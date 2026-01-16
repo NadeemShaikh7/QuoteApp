@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/services/notification_service.dart';
 import '../../controllers/auth_controller.dart';
+import '../../controllers/favorite_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   final AuthController controller = Get.put(AuthController());
+  final FavoriteController favController = Get.put(FavoriteController(),permanent: true);
   final emailCtrl = TextEditingController(text: "nads0796@gmail.com");
   final passwordCtrl = TextEditingController(text: "Nads@071996");
 
@@ -26,10 +28,13 @@ class LoginScreen extends StatelessWidget {
             Obx(() => controller.isLoading.value
                 ? const CircularProgressIndicator()
                 : ElevatedButton(
-              onPressed: () => controller.login(
-                emailCtrl.text,
-                passwordCtrl.text,
-              ),
+              onPressed: () {
+                favController.loadFavorites();
+                controller.login(
+                  emailCtrl.text,
+                  passwordCtrl.text,
+                );
+              },
               child: const Text('Login'),
             )),
             TextButton(
